@@ -1,0 +1,15 @@
+.title {
+    text-align: center;
+    margin: 2rem 0 3.2rem; 
+}
+
+.form-container {
+    border: 1px solid #cecece;
+    padding: 2rem;
+    width: 50rem;
+    margin: 0 auto;
+}
+
+.btn {
+    margin: 2rem 0 .8rem;
+}
