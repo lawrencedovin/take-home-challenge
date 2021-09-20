@@ -1,4 +1,14 @@
 var express = require('express');
+
+const app = express();
+const nunjucks = require('nunjucks');
+
+app.set("view engine", "html");
+nunjucks.configure("views", {
+  autoescape: true,
+  express: app
+});
+
 var router = express.Router();
 var _ = require('lodash');
 var logger = require('../lib/logger');
@@ -22,7 +32,10 @@ router.post('/', async (req, res, next) => {
     }
     users[user.id] = user;
     log.info('Created user', user);
-    res.json(user);
+    // res.send(`Thanks for signing up! ${user.firstName} ${user.lastName}`)
+    res.redirect('/admin.html');
+    // res.json(user);
+    // Confirm that user was created in redirected page.
   }
   catch(e) {
     return next(e);
