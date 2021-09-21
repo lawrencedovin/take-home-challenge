@@ -1,12 +1,4 @@
 const express = require('express');
-const app = express();
-const nunjucks = require('nunjucks');
-
-app.set("view engine", "html");
-nunjucks.configure("views", {
-  autoescape: true,
-  express: app
-});
 
 var router = express.Router();
 var _ = require('lodash');
@@ -19,6 +11,15 @@ var curId = _.size(users);
 /* GET users listing. */
 router.get('/', function(req, res) {
   res.json(_.toArray(users));
+});
+
+/* GET users listing. */
+router.get('/admin', function(req, res) {
+  res.render('admin');
+});
+
+router.get("/dogs/:name", (req, res, next) => {
+  res.render("dog", { name: req.params.name });
 });
 
 /* Create a new user */

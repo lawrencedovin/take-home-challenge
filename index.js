@@ -5,11 +5,19 @@ var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var logger = require('./lib/logger');
+let nunjucks = require('nunjucks')
 
 var users = require('./routes/users');
 
 var app = express();
 var log = logger(app);
+
+app.set("view engine", "html");
+// configute Nunjucks with 'views' as templates directory
+nunjucks.configure('public/views', {
+  autoescape:  true,
+  express:  app
+})
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
