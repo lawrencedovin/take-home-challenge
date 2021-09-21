@@ -34,7 +34,7 @@ router.post('/', async (req, res, next) => {
     users[user.id] = user;
     log.info('Created user', user);
     // res.send(`Thanks for signing up! ${user.firstName} ${user.lastName}`)
-    res.redirect('/users');
+    res.redirect('/users/admin');
     // res.json(user);
     // Confirm that user was created in redirected page.
   }
