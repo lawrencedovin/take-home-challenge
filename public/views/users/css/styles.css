@@ -13,3 +13,9 @@
 .btn {
     margin: 2rem 0 .8rem;
 }
+
+.table, .signup-container {
+    max-width: 75rem;
+    width: 75rem;
+    margin: 0 auto;
+}
