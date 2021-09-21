@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
 
 /* GET users listing. */
 router.get('/admin', function(req, res) {
-  res.render('admin');
+  res.render('admin', { users: _.toArray(users)});
 });
 
 router.get("/dogs/:name", (req, res, next) => {

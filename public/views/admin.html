@@ -6,5 +6,8 @@
 </head>
 <body>
   List user data here
+  {% for user in users %}
+  {{ user.firstName }}
+  {% endfor %}
 </body>
 </html>
