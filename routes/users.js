@@ -13,13 +13,14 @@ router.get('/', function(req, res) {
   res.json(_.toArray(users));
 });
 
-/* GET users listing. */
-router.get('/admin', function(req, res) {
-  res.render('admin', { users: _.toArray(users)});
+/* GET Signup form. */
+router.get('/signup', function(req, res) {
+  res.render('signup');
 });
 
-router.get("/dogs/:name", (req, res, next) => {
-  res.render("dog", { name: req.params.name });
+/* GET Admin listing. */
+router.get('/admin', function(req, res) {
+  res.render('admin', { users: _.toArray(users)});
 });
 
 /* Create a new user */

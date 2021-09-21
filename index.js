@@ -13,7 +13,7 @@ var app = express();
 var log = logger(app);
 
 app.set("view engine", "html");
-// configute Nunjucks with 'views' as templates directory
+// configure Nunjucks with 'views' as templates directory
 nunjucks.configure('public/views', {
   autoescape:  true,
   express:  app
